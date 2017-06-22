@@ -1,1 +1,23 @@
+.app-content {
+    width: 500px;
+    margin: auto;
+    margin: 50px auto;
 
+}
+
+.setTimer {
+    margin-top: 20px
+}
+
+.input-row {
+    margin-bottom: 12px;
+}
+
+
+@media (max-width:600px) {
+    .app-content {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
