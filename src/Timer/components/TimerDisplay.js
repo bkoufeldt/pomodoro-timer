@@ -20,7 +20,7 @@ const TimerDisplay = (props) => {
                         className="youtube-responsive-width"
                         height="400"
                         style={divStyle}
-                        src="https://www.youtube.com/embed/FToopFvVE5I?autoplay=1&start=10&controls=0&showinfo=0&frameborder=0">
+                        src="https://www.youtube.com/embed/DJjJeohh7Vk?autoplay=1&controls=0&showinfo=0&frameborder=0">
                     </iframe> :
                     <img src={background} style={divStyle} alt="woman looking at hourglass"/>
                 }
