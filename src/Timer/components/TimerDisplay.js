@@ -1,6 +1,7 @@
 import React from 'react';
 import background from '../../images/hourglass.jpg';
-import '../css/TimerDisplay.css'
+import '../css/TimerDisplay.css';
+import { COMPLETE } from '../../timerStates';
 
 const TimerDisplay = (props) => {
     // format the timer display 00:00:00
@@ -12,7 +13,18 @@ const TimerDisplay = (props) => {
 
     return (
         <div>
-            <img src={background} style={divStyle} alt="woman looking at hourglass"/>
+            <div className="row center-block">
+                {
+                    (props.timerState === COMPLETE) ?
+                    <iframe
+                        className="youtube-responsive-width"
+                        height="400"
+                        style={divStyle}
+                        src="https://www.youtube.com/embed/FToopFvVE5I?autoplay=1&start=10&controls=0&showinfo=0&frameborder=0">
+                    </iframe> :
+                    <img src={background} style={divStyle} alt="woman looking at hourglass"/>
+                }
+            </div>
             <h2 className='text-center heading'>The Hourglass</h2>
             <div className="row">
                 <h2 className="text-center">

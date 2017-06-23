@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NOT_RUNNING, RUNNING, COMPLETE } from '../../timerStates';
+import { RUNNING, COMPLETE } from '../../timerStates';
 
 class TimerButton extends Component {
     constructor() {

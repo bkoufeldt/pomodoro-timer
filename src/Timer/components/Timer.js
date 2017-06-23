@@ -22,7 +22,7 @@ class Timer extends Component {
         this.stopTimer = this.stopTimer.bind(this);
         this.resetTimer = this.resetTimer.bind(this);
     }
-    
+
     // set currentTimeState, if user enters neg. value returns 0
     setCurrentTime(newCurrentTime) {
         if (newCurrentTime < 0) {
@@ -88,13 +88,15 @@ class Timer extends Component {
     render() {
         return (
             <div>
-                <TimerDisplay currentTime={this.state.currentTimeState}/>
+                <TimerDisplay
+                    currentTime={this.state.currentTimeState}
+                    timerState={this.state.timerState}
+                />
                 <TimerButton startTimer={this.startTimer}
                              stopTimer={this.stopTimer}
                              resetTimer={this.resetTimer}
                              timerState={this.state.timerState}
-
-                             />
+                />
                 {(this.state.timerState !== timerStates.RUNNING) ?
                 <TimerSettings
                     currentTime={this.state.currentTimeState}
