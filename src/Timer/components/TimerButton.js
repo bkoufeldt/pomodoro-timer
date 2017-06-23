@@ -25,11 +25,7 @@ class TimerButton extends Component {
     }
 
     render() {
-        return (
-            <div className="row">
-                {this.getButton()}
-            </div>
-        );
+        return <div className="row"> {this.getButton()}</div>;
     }
 }
 

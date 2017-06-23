@@ -92,10 +92,11 @@ class Timer extends Component {
                     currentTime={this.state.currentTimeState}
                     timerState={this.state.timerState}
                 />
-                <TimerButton startTimer={this.startTimer}
-                             stopTimer={this.stopTimer}
-                             resetTimer={this.resetTimer}
-                             timerState={this.state.timerState}
+                <TimerButton
+                    startTimer={this.startTimer}
+                    stopTimer={this.stopTimer}
+                    resetTimer={this.resetTimer}
+                    timerState={this.state.timerState}
                 />
                 {(this.state.timerState !== timerStates.RUNNING) ?
                 <TimerSettings
