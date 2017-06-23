@@ -6,3 +6,11 @@
 h2 {
   font-family: 'Bungee Inline', cursive;
 }
+
+.heading {
+    margin-bottom: 0px
+}
+
+.display {
+    margin-top: 5px;
+}

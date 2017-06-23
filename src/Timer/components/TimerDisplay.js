@@ -20,14 +20,14 @@ const TimerDisplay = (props) => {
                         className="youtube-responsive-width"
                         height="400"
                         style={divStyle}
-                        src="https://www.youtube.com/embed/DJjJeohh7Vk?autoplay=1&controls=0&showinfo=0&frameborder=0">
+                        src="https://www.youtube.com/embed/DJjJeohh7Vk?autoplay=1&start=5&controls=0&showinfo=0&frameborder=0">
                     </iframe> :
                     <img src={background} style={divStyle} alt="woman looking at hourglass"/>
                 }
             </div>
             <h2 className='text-center heading'>The Hourglass</h2>
             <div className="row">
-                <h2 className="text-center">
+                <h2 className="text-center display">
                     {leftPad(props.currentTime.get('hours'))}:
                     {leftPad(props.currentTime.get('minutes'))}:
                     {leftPad(props.currentTime.get('seconds'))}
