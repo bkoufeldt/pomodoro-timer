@@ -9,8 +9,19 @@ class Timer extends Component {
         super()
 
         this.state = {
-            currentTimeState: moment.duration(25, 'minutes')
+            currentTimeState: moment.duration(25, 'minutes'),
         }
+
+        this.setCurrentTime = this.setCurrentTime.bind(this)
+    }
+
+    setCurrentTime(newCurrentTime) {
+        if (newCurrentTime < 0) {
+            return 0;
+        }
+        this.setState({
+            currentTimeState: newCurrentTime
+        })
     }
 
     render() {
@@ -18,7 +29,7 @@ class Timer extends Component {
             <div>
                 <TimerDisplay currentTime={this.state.currentTimeState}/>
                 <TimerButton />
-                <TimerSettings />
+                <TimerSettings currentTime={this.state.currentTimeState} setCurrentTime={this.setCurrentTime}/>
             </div>
         );
     }
