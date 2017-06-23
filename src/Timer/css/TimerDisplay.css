@@ -1,0 +1,8 @@
+@fontface {
+  font-family: 'Bungee Inline', cursive;
+  src: url('https://fonts.googleapis.com/css?family=Bungee+Inline')
+}
+
+h2 {
+  font-family: 'Bungee Inline', cursive;
+}

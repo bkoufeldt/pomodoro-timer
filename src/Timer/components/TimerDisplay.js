@@ -1,5 +1,6 @@
 import React from 'react';
 import background from '../../images/hourglass.jpg';
+import '../css/TimerDisplay.css'
 
 const TimerDisplay = (props) => {
     // format the timer display 00:00:00
@@ -12,7 +13,7 @@ const TimerDisplay = (props) => {
     return (
         <div>
             <img src={background} style={divStyle} alt="woman looking at hourglass"/>
-            <h2 className='text-center'>The Hourglass</h2>
+            <h2 className='text-center heading'>The Hourglass</h2>
             <div className="row">
                 <h2 className="text-center">
                     {leftPad(props.currentTime.get('hours'))}:
