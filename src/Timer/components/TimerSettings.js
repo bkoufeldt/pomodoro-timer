@@ -5,6 +5,7 @@ class TimerSettings extends Component {
         super()
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.renderLabelsInputs = this.renderLabelsInputs.bind(this);
     }
 
     handleInputChange(event) {
@@ -19,59 +20,32 @@ class TimerSettings extends Component {
             newCurrentTime === newCurrentTime.subtract(newCurrentTime.get('seconds'), 'seconds').add(parseInt(event.target.value), 'seconds');
         }
 
-    this.props.setCurrentTime(newCurrentTime);
+        this.props.setCurrentTime(newCurrentTime);
+    }
+
+    renderLabelsInputs(unit, label) {
+        return (<div className="row input-row">
+                    <div className="col-sm-3"><label htmlFor={unit}>{label}</label></div>
+                    <div className="col-sm-9">
+                        <input
+                            id={unit}
+                            type="number"
+                            min="0"
+                            className="form-control"
+                            defaultValue={this.props.currentTime.get(unit)}
+                            onChange={this.handleInputChange}
+                        />
+                    </div>
+                </div>);
     }
 
     render() {
         return (
             <div className="row center-block setTimer">
                 <div className="form-group">
-                    <div className="row input-row">
-                        <div className="col-sm-3">
-                            <label htmlFor="hours">Hours</label>
-                        </div>
-                        <div className="col-sm-9">
-                            <input
-                                id="hours"
-                                type="number"
-                                min="0"
-                                className="form-control"
-                                defaultValue={this.props.currentTime.get('hours')}
-                                onChange={this.handleInputChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="row input-row">
-                        <div className="col-sm-3">
-                            <label htmlFor="minutes">Minutes</label>
-                        </div>
-                        <div className="col-sm-9">
-                            <input
-                                id="minutes"
-                                type="number"
-                                min="0"
-                                className="form-control"
-                                defaultValue={this.props.currentTime.get('minutes')}
-                                onChange={this.handleInputChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="row input-row">
-                        <div className="col-sm-3">
-                            <label htmlFor="seconds">Seconds</label>
-                        </div>
-                        <div className="col-sm-9">
-                            <input
-                                id="seconds"
-                                type="number"
-                                min="0"
-                                className="form-control"
-                                defaultValue={this.props.currentTime.get('seconds')}
-                                onChange={this.handleInputChange}
-                            />
-                        </div>
-                    </div>
-
+                    {this.renderLabelsInputs('hours', 'Hours')}
+                    {this.renderLabelsInputs('minutes', 'Minutes')}
+                    {this.renderLabelsInputs('seconds', 'Seconds')}
                 </div>
             </div>
         );
